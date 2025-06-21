@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "icp_task_manager_backend": {
+      "candid": "src/icp_task_manager_backend/icp_task_manager_backend.did",
+      "package": "icp_task_manager_backend",
+      "type": "rust",
+      "cargo": {
+        "args": []
+      }
+    },
+    "icp_task_manager_frontend": {
+      "dependencies": ["icp_task_manager_backend"],
+      "source": ["src/icp_task_manager_frontend/dist"],
+      "type": "assets",
+      "workspace": "icp_task_manager_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

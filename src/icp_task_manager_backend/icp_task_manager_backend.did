@@ -1,0 +1,13 @@
+type Task = record {
+  id: nat64;
+  title: text;
+  description: text;
+  completed: bool;
+};
+
+service : {
+  get_tasks: () -> (vec Task) query;
+  create_task: (text, text) -> (Task);
+  update_task: (nat64, text, text, bool) -> (opt Task);
+  delete_task: (nat64) -> (bool);
+}
